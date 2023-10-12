@@ -5,7 +5,7 @@ import './Category.css'
 const Category = () => {
     const [categoryData, setCategoryData] = useState('');
     useEffect(()=>{
-        fetch('https://tastebite-chef-recipe-hunter-server-emon83.vercel.app/allData')
+        fetch(`${import.meta.env.VITE_API_URL}/allData`)
         .then(response=> response.json())
         .then(data => setCategoryData(data))
     }, [])
